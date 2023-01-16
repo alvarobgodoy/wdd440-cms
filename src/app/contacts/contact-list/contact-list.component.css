@@ -1,0 +1,36 @@
+.contact-header {
+    padding: 1rem;
+    background-color: rgb(244, 244, 244);
+    border: 2px solid lightgray;
+    border-bottom: none;
+}
+
+.contact-header h2 {
+    display: inline;
+}
+
+.contact-header button {
+    float: right;
+}
+
+.content {
+    border: 2px solid lightgray;
+    padding: 1rem;
+}
+
+/* CONTACT LIST */
+.contact-list .contact-container {
+    margin: .5rem;
+    padding: 1rem;
+    border: 2px solid lightgrey;
+}
+
+.contact-list .contact-container .contact-name {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.contact-list .contact-container .contact-img img {
+    max-width: 40px;
+    height: auto;
+}

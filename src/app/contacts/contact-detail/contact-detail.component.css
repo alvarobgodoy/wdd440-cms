@@ -1,0 +1,33 @@
+.contact-header {
+    padding: 1rem;
+    background-color: rgb(244, 244, 244);
+    border: 2px solid lightgray;
+    border-bottom: none;
+}
+
+.contact-header h2 {
+    display: inline;
+    margin-bottom: 1rem;
+}
+
+.contact-header button {
+    float: right;
+}
+
+.contact-header .vertical-align {
+    margin-top: 1rem;
+}
+
+.contact-header .vertical-align button {
+    margin: 0 5px;
+}
+
+.contact-header .contact-img img {
+    max-width: 40px;
+    height: auto;
+}
+
+.content {
+    border: 2px solid lightgray;
+    padding: 1rem;
+}

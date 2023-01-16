@@ -1,1 +1,24 @@
-<p>contact-detail works!</p>
+<div class="contact-header">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>{{ contact.name }}</h2>
+        </div>
+    </div>
+    <div class="row vertical-align">
+        <div class="col-sm-auto">
+            <div class="contact-img col-sm-2">
+                <img src='{{ contact.imageUrl }}'>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <button class="btn btn-danger">Delete</button>
+            <button class="btn btn-primary">Edit</button>
+        </div>
+    </div>
+</div>
+<div class="row content">
+    <div class="col-sm-12 contact-info">
+        <p class="contact-email"><strong>Email: </strong>{{ contact.email }}</p>
+        <p class="contact-phone"><strong>Phone: </strong>{{ contact.phone }}</p>
+    </div>
+</div>
