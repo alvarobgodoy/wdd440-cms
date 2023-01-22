@@ -1,0 +1,16 @@
+/* CONTACT LIST */
+.contact-container {
+    margin: .5rem;
+    padding: 1rem;
+    border: 2px solid lightgrey;
+}
+
+.contact-container .contact-name {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.contact-container .contact-img img {
+    max-width: 40px;
+    height: auto;
+}

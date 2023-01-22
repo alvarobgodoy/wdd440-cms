@@ -5,12 +5,10 @@
     </div>
 </div>
 <div class="row content">
-    <div class="col-sm-12 contact-list">
-        <div class="row contact-container vertical-align" *ngFor="let contact of contacts">
-            <div class="contact-name col-sm-10">{{ contact.name }}</div>
-            <div class="contact-img col-sm-auto">
-                <img src='{{ contact.imageUrl }}'>
-            </div>
-        </div>
+    <div class="col-sm-12">
+        <app-contact-item  
+        *ngFor="let contact of contacts" 
+        [contact]="contact"
+        (click)="onSelected(contact)"></app-contact-item>
     </div>
 </div>
