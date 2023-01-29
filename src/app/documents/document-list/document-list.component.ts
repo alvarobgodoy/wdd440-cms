@@ -15,9 +15,9 @@ export class DocumentListComponent {
     new Document('5', 'Doc n5', 'Description of document number 5 here', 'https://wikipedia.com', 'docs546, doc543')
   ]
 
-  @Output() selectedContactEvent = new EventEmitter<Document>();
+  @Output() selectedDocumentEvent = new EventEmitter<Document>();
 
   onSelectedDocument(document: Document) {
-    this.selectedContactEvent.emit(document);
+    this.selectedDocumentEvent.emit(document);
   }
 }
