@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { DocumentService } from '../document-service.service';
+import { DocumentService } from '../document.service';
 import { Document } from '../document.model';
 
 @Component({
@@ -12,13 +12,11 @@ export class DocumentListComponent {
 
   constructor(private documentService: DocumentService) {}
 
-  @Output() selectedDocumentEvent = new EventEmitter<Document>();
-
   ngOnInit() {
     this.documents = this.documentService.getDocuments();
   }
 
   onSelectedDocument(document: Document) {
-    this.selectedDocumentEvent.emit(document);
+    this.documentService.documentSelectedEvent.emit(document);
   }
 }
