@@ -16,9 +16,7 @@ export class ContactListComponent {
     this.contacts = this.contactService.getContacts();
   }
 
-  @Output() selectedContactEvent = new EventEmitter<Contact>();
-
   onSelected(contact: Contact) {
-    this.selectedContactEvent.emit(contact);
+    this.contactService.contactSelectedEvent.emit(contact);
   }
 }
