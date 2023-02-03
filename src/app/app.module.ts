@@ -37,7 +37,7 @@ import { ContactService } from './contacts/contact.service';
   imports: [
     BrowserModule
   ],
-  providers: [ContactService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
