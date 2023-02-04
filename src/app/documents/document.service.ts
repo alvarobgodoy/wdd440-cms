@@ -19,8 +19,11 @@ export class DocumentService {
   }
 
   getDocument(id: string) {
-    this.documents.find((document) => {
-      return document.id = id;
-    })
+    for (const document of this.documents) {
+      if(document.id == id) {
+          return document;
+      }
+    }
+    return null!;
   }
 }
