@@ -1,11 +1,11 @@
-<div class="row contact-header">
-    <div class="col-sm-12">
-        <h2>Contacts</h2>
-        <button class="btn btn-success">New Contact</button>
+<div class="panel panel-default">
+    <div class="row contact-header panel-heading">
+        <div class="col-sm-12">
+            <span class="title">Contacts</span>
+            <button class="btn btn-success">New Contact</button>
+        </div>
     </div>
-</div>
-<div class="row content">
-    <div class="col-sm-12">
+    <div class="row content panel-body">
         <app-contact-item  
         *ngFor="let contact of contacts" 
         [contact]="contact"

@@ -1,12 +1,11 @@
 .contact-header {
     padding: 1rem;
-    background-color: rgb(244, 244, 244);
-    border: 2px solid lightgray;
-    border-bottom: none;
 }
 
-.contact-header h2 {
+.contact-header span {
     display: inline;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .contact-header button {
@@ -14,7 +13,6 @@
 }
 
 .content {
-    border: 2px solid lightgray;
     padding: 1rem;
 }
 

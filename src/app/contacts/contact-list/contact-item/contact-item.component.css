@@ -2,7 +2,7 @@
 .contact-container {
     margin: .5rem;
     padding: 1rem;
-    border: 2px solid lightgrey;
+    /* border: 2px solid lightgrey; */
 }
 
 .contact-container .contact-name {
