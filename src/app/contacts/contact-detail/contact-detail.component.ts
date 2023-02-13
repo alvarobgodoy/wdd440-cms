@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, RouterModule, Params } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Contact } from '../contact.model';
 import { ContactService } from '../contact.service';
 
@@ -14,7 +14,7 @@ export class ContactDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private contactService: ContactService,
-    private router: RouterModule) {}
+    private router: Router) {}
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -22,5 +22,10 @@ export class ContactDetailComponent {
         this.contact = this.contactService.getContact(queryParams['id']);
       }
     )
+  }
+
+  onDelete(contact: Contact) {
+    this.contactService.deleteContact(contact);
+    this.router.navigateByUrl('/contacts');
   }
 }
