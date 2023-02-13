@@ -1,6 +1,4 @@
-<app-header (featureSelected)="switchView($event)"></app-header>
-<div class="container" [ngSwitch]="loadedView">
-    <app-documents *ngSwitchCase="'documents'"></app-documents>
-    <app-message-list *ngSwitchCase="'messages'"></app-message-list>
-    <app-contacts *ngSwitchCase="'contacts'"></app-contacts>
+<app-header></app-header>
+<div class="container">
+    <router-outlet></router-outlet>
 </div>

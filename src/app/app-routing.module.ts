@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     { path: '', redirectTo: '/documents' },
     { path: 'documents', component: DocumentsComponent },
     { path: 'messages', component: MessageListComponent },
-    { path: 'contacts', component: ContactsComponent },
+    { path: 'contacts', component: ContactsComponent }
 ]
 
 @NgModule({
