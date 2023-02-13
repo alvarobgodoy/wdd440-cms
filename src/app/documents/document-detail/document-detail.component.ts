@@ -31,4 +31,9 @@ export class DocumentDetailComponent {
       this.nativeWindow.open(this.document.url);
     }
   }
+
+  onDelete() {
+      this.docService.deleteDocument(this.document);
+      this.router.navigate(['/documents'])
+ }
 }
