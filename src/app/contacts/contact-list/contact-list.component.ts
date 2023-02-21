@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Contact } from '../contact.model';
 import { ContactService } from '../contact.service';
 
@@ -9,15 +10,20 @@ import { ContactService } from '../contact.service';
 })
 export class ContactListComponent {
   contacts: Contact[] = [];
+  subscription!: Subscription;
 
   constructor(private contactService: ContactService) {}
 
   ngOnInit() {
     this.contacts = this.contactService.getContacts();
-    this.contactService.contactChangedEvent.subscribe(
+    this.subscription = this.contactService.contactListChangedEvent.subscribe(
       (contactList: Contact[]) => {
         this.contacts = contactList;
       }
     );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
