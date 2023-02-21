@@ -9,12 +9,14 @@ import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
 
 export class DocumentService {
   documents: Document[] = [];
+  maxId: number;
 
   documentSelectedEvent = new EventEmitter<Document>();
   documentListChangedEvent = new Subject<Document[]>();
 
   constructor() {
     this.documents = MOCKDOCUMENTS;
+    this.maxId = this.getMaxId();
   }
 
   getDocuments() {
@@ -41,4 +43,42 @@ export class DocumentService {
     this.documents.splice(pos, 1);
     this.documentListChangedEvent.next(this.documents.slice());
  }
+
+ getMaxId(): number {
+    let maxId = 0;
+
+    for (const document of this.documents) {
+      const currentId = +document.id;
+      if(currentId > maxId) {
+        maxId = currentId;
+      }
+    }
+    return maxId
+  }
+
+  addDocument(newDocument: Document) {
+    if(!newDocument) {
+      return
+    }
+
+    this.maxId++;
+    newDocument.id = this.maxId.toString();
+    this.documents.push(newDocument);
+    this.documentListChangedEvent.next(this.documents.slice());
+  }
+
+  updateDocument(originalDocument: Document, newDocument: Document) {
+    if(!originalDocument || !newDocument) {
+      return
+    }
+
+    let pos = this.documents.indexOf(originalDocument)
+    if(pos < 0) {
+      return
+    }
+
+    newDocument.id = originalDocument.id;
+    this.documents[pos] = newDocument;
+    this.documentListChangedEvent.next(this.documents.slice());
+  }
 }
